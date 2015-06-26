@@ -5,5 +5,5 @@ describe ProgressiveLoad do
     expect(ProgressiveLoad::VERSION).not_to be nil
   end
 
-  it 'does something useful'
+  it 'tests loading'
 end
