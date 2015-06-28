@@ -2,8 +2,13 @@ require "progressive_load/version"
 
 # TODO: Extend ActionController, it's too clunky to have to include it everywhere
 module ProgressiveLoad
-  module Rails
-    class Engine < ::Rails::Engine
+  if defined?(::Rails) and Gem::Requirement.new('>= 3.1').satisfied_by?(Gem::Version.new ::Rails.version)
+    module Rails
+      class Engine < ::Rails::Engine
+        initializer "progressive_load.assets.precompile" do |app|
+          app.config.assets.precompile += %w( progressive_load.gif progressive_load.js.coffee progressive_load.css.scss )
+        end
+      end
     end
   end
 
