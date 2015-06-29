@@ -3,7 +3,7 @@
 Slow partial got you down? Load it later! Use this gem to defer loading of partials till after page load. They will be fetched via AJAX and placed on the page when ready.
 
 ## State of Project
-[![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
+[![Build Status](https://travis-ci.org/johnsonj/progressive_load.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_load) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
 
 This gem is currently in proof of concept phase. It is functional but the API needs work and testing before it can be taken more seriously.
 
