@@ -1,8 +1,10 @@
 # ProgressiveLoad
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/progressive_load`. To experiment with that code, run `bin/console` for an interactive prompt.
+Slow partial got you down? Load it later! Use this gem to defer loading of partials till after page load. They will be fetched via AJAX and placed on the page when ready.
 
-TODO: Delete this and the text above, and describe your gem
+## State of Project
+
+This gem is currently in proof of concept phase. It is functional but the API needs work and testing before it can be taken more seriously.
 
 ## Installation
 
@@ -20,9 +22,28 @@ Or install it yourself as:
 
     $ gem install progressive_load
 
+You will also need to include the Javascript by adding the following to your application.js:
+
+```javascript
+//=progressive_load
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+In the view you would like to progressively load:
+
+```erb
+<%=render_progressive_partial 'friendly_name', 'path_to_partial' %>
+```
+
+In the controller action, end it with:
+
+```ruby
+def action
+    // your code here
+    progressive_render 'full_path_to_view'
+end
+```
 
 ## Development
 
@@ -32,10 +53,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/progressive_load. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/johnsonj/progressive_load. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
