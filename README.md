@@ -7,25 +7,17 @@ Slow partial got you down? Load it later! Use this gem to defer loading of parti
 ## State of Project
 [![Build Status](https://travis-ci.org/johnsonj/progressive_load.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_load) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
 
-This gem is currently in proof of concept phase. It is functional but the API needs work and testing before it can be taken more seriously.
+This gem is tracking a 1.0.0 release but should not be considered stable until then. [See open issues](https://github.com/johnsonj/progressive_load/milestones/1.0.0).
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile and run bundle
 
 ```ruby
-gem 'progressive_load'
+gem 'progressive_load', github: 'johnsonj/progressive_load'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install progressive_load
-
-You will also need to include the Javascript by adding the following to your application.js:
+Then add the following to your application.js:
 
 ```javascript
 //=progressive_load
