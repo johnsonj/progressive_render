@@ -21,5 +21,7 @@ module ProgressiveLoad
         end
       end
     end
+  else
+    puts "WARNING: ProgressiveLoad has not been installed due to missing dependencies"
   end
 end
