@@ -35,7 +35,7 @@ In the controller action, end it with:
 
 ```ruby
 def action
-    // your code here
+    # your code here
     progressive_render 'full_path_to_view'
 end
 ```
