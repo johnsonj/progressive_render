@@ -1,5 +1,7 @@
 # ProgressiveLoad
 
+![ProgressiveLoad Demo](http://g.recordit.co/WIb75XbkET.gif)
+
 Slow partial got you down? Load it later! Use this gem to defer loading of partials till after page load. They will be fetched via AJAX and placed on the page when ready.
 
 ## State of Project
@@ -34,7 +36,7 @@ You will also need to include the Javascript by adding the following to your app
 In the view you would like to progressively load:
 
 ```erb
-<%=render_progressive_partial 'friendly_name', 'path_to_partial' %>
+<%=progressive_render 'friendly_name', 'path_to_partial' %>
 ```
 
 In the controller action, end it with:
@@ -48,7 +50,7 @@ end
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. There is a dummy application located in spec/dummy/ that demonstrates a sample integration and can be used for interactive testing.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 

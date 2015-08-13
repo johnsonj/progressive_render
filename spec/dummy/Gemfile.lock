@@ -130,7 +130,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails
-  jquery-rails
   progressive_load!
   rails (= 4.2.2)
   sass

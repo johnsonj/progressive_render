@@ -29,7 +29,7 @@ module ProgressiveLoad
     end
 
     # TODO: Name can't seem to handle / in the path. Likely remove this interface anyways.
-    def render_progressive_partial(name, path=nil, options={})
+    def progressive_render(name, path=nil, options={})
       path = name if path.nil?
 
       progressive_load_content(name, is_main_load?) do
