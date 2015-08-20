@@ -46,7 +46,8 @@ Parses the request object to determine if this is the main load of the app and i
 ```ruby
 rh = RequestHandler.new(request)
 rh.is_main_load?
-rh.partial_name
+rh.fragment_name
+rh.load_path(fragment_name)
 ```
 
 # RailsBuilder #
@@ -79,3 +80,17 @@ RailsInstaller.mount_initializer
 # Or?
 RailsInstaller.mount_initializer(app)
 ```
+
+
+# Structure #
+lib/
+  progressive_load.rb (version)
+  rails/
+    rails.rb
+    installer.rb
+    builder.rb
+    view_renderer.rb
+    path_resolver.rb
+  rack/
+    request_handler.rb
+  progressive_renderer.rb

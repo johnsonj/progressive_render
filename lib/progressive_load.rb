@@ -1,6 +1,9 @@
-require "progressive_load/version"
-require "progressive_load/controller"
-require "progressive_load/view"
+require 'progressive_load/version'
+require 'progressive_load/controller'
+require 'progressive_load/view'
+
+require 'progressive_load/rack'
+require 'progressive_load/rails'
 
 module ProgressiveLoad
   if defined?(::Rails) and Gem::Requirement.new('>= 3.1').satisfied_by?(Gem::Version.new ::Rails.version)

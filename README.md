@@ -28,7 +28,7 @@ Then add the following to your application.js:
 In the view you would like to progressively load:
 
 ```erb
-<%=progressive_render 'friendly_name', 'path_to_partial' %>
+<%=progressive_render 'unique_friendly_name', 'partial' %>
 ```
 
 In the controller action, end it with:
@@ -36,7 +36,7 @@ In the controller action, end it with:
 ```ruby
 def action
     # your code here
-    progressive_render 'full_path_to_view'
+    progressive_render
 end
 ```
 

@@ -10,7 +10,8 @@ RSpec.describe LoadTestController, type: :request do
 		path = doc.css('#name_progressive_load')[0]["data-progressive-load-path"]
 
 		get path
-
-		expect(response.body).to include("World")
+		doc = Nokogiri::HTML(response.body)
+		# Find the result
+		replacement = doc.css('#world')[0]
 	end
 end
