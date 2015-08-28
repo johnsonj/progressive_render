@@ -6,9 +6,9 @@ module ProgressiveLoad
       end
     end
 
-    def progressive_load_path(req, name)
-      # Append the param to the URL. Nasty I know.
-      req.fullpath + "#{req.fullpath.include?('?') ? '&' : '?'}load_partial=#{name}" 
+    def progressive_load_path(req, fragment_name)
+      rh = ProgressiveLoad::Rack::RequestHandler.new(req)
+      rh.load_path(fragment_name)
     end
   end
 end
