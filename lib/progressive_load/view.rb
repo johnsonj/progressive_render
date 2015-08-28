@@ -13,7 +13,7 @@ module ProgressiveLoad
       tc.controller = request.params["controller"]
       tc.action     = request.params["action"]
       pr = ProgressiveLoad::Rails::PathResolver.new(tc)
-      #binding.pry
+
       progressive_load_content(fragment_name, rh.is_main_load?) do
         if rh.is_main_load?
           render partial: 'progressive_load/placeholder'
