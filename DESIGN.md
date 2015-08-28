@@ -1,4 +1,6 @@
 # PathResolver (Rails Specific) #
+Status: Implemented
+
 Resolves the full path for views/partials. Might want to give it a RequestHandler.
 
 ## Basic Syntax ##
@@ -29,6 +31,8 @@ dtp.path_for('bar') == foo/bar
 ```
 
 # ViewRenderer (Rails Specific) #
+Status: TODO
+
 Renders a partial to a string? Maybe. Controller vs. View may need seperate view renderers because controller needs to output the stream. Is there a difference between ActionController.render and ActionView.render?
 
 ## Basic Syntax ##
@@ -40,6 +44,8 @@ rt.render_inline(content) # is this needed?
 ```
 
 # RequestHandler (Rack Specific) #
+Status: Implemented
+
 Parses the request object to determine if this is the main load of the app and if not, what partial view is being requested
 
 ## Basic Syntax ##
@@ -51,6 +57,8 @@ rh.load_path(fragment_name)
 ```
 
 # RailsBuilder #
+Status: TODO
+
 Takes all necessary context and gives access to the ProgressiveRenderer
 
 ## Basic Syntax ##
@@ -61,6 +69,8 @@ rb.controller_renderer => ProgressiveRenderer
 ```
 
 # ProgresiveRenderer #
+Status: TODO. Currently handled by ProgressiveLoad::Controller/View/Helpers
+
 Applies all policies to provide a simple render interface. 
 
 Can we get around the partial_renderer field? It determines if it should render placeholders in place of the view passed into it. 
@@ -72,6 +82,8 @@ pr.render(partial_name, &block=nil)
 ```
 
 # RailsInstaller #
+Status: TODO. Currently handled by ProgressiveLoad
+
 Installs the view/controller renderer into ActionView/ActionController
 
 ## Basic Syntax ##
