@@ -10,7 +10,7 @@ module ProgressiveLoad
 			end
 
 			def is_main_load?
-				fragment_name == nil
+				fragment_name == nil || fragment_name == ""
 			end
 
 			def fragment_name
@@ -20,7 +20,8 @@ module ProgressiveLoad
 			def load_path(fragment_name)
 				return nil if !is_main_load?
 
-				query = @request.GET
+				# Ensure we get a fresh copy of the request and aren't modifying it
+				query = @request.GET.clone
 				query[FRAGMENT_KEY] = fragment_name
 
 				URI::HTTP.build(path: @request.path, query: URI.encode_www_form(query)).request_uri

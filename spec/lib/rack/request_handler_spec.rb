@@ -24,4 +24,18 @@ describe ProgressiveLoad::Rack::RequestHandler do
 		expect(rh.fragment_name).to eq("my_partial")
 		expect(rh.load_path('bar')).to eq(nil)
 	end
+
+	it "does not modify the request object" do
+		get_request = {}
+		get_clone = get_request.clone
+		req = double
+		allow(req).to receive(:GET).and_return(get_request)
+		allow(req).to receive(:path).and_return("/bar/baz")
+
+		rh = ProgressiveLoad::Rack::RequestHandler.new(req)
+		rh.load_path('bar')
+
+		expect(get_request[FRAGMENT_KEY]).to be_nil
+		expect(get_request).to eq(get_request)
+	end
 end

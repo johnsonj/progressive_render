@@ -1,5 +1,8 @@
 class LoadTestController < ApplicationController
-	def single
+	def index
+	end
+
+	def partial
 		progressive_render
 	end
 end

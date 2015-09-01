@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'load_test#single'
+  root 'load_test#index'
+
+  scope '/load_test' do
+    get '/partial' => 'load_test#partial', as: 'loat_test_partial'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
