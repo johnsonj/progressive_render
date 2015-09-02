@@ -17,6 +17,10 @@ module ProgressiveLoad
 				@request.GET[FRAGMENT_KEY]
 			end
 
+			def should_render_fragment?(_fragment_name)
+				!is_main_load? && fragment_name == _fragment_name
+			end
+
 			def load_path(fragment_name)
 				return nil if !is_main_load?
 

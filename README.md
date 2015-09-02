@@ -2,7 +2,7 @@
 
 ![ProgressiveLoad Demo](http://g.recordit.co/WIb75XbkET.gif)
 
-Slow partial got you down? Load it later! Use this gem to defer loading of partials till after page load. They will be fetched via AJAX and placed on the page when ready.
+Slow content got you down? Load it later! Use this gem to defer loading of specific page sections till after page load. They will be fetched via AJAX and placed on the page when ready.
 
 ## State of Project
 [![Build Status](https://travis-ci.org/johnsonj/progressive_load.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_load) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
@@ -25,10 +25,15 @@ Then add the following to your application.js:
 
 ## Usage
 
-In the view you would like to progressively load:
+In the view you would like to progressively load, either name and reference the partial or pass a block
 
 ```erb
 <%=progressive_render 'unique_friendly_name', 'partial' %>
+
+<%=progressive_render 'my_slow_block' do %>
+	<h1>Content!</h1>
+	<% sleep 5 >
+<% end %>
 ```
 
 In the controller action, end it with:

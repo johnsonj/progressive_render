@@ -10,6 +10,7 @@ describe ProgressiveLoad::Rack::RequestHandler do
 
 		rh = ProgressiveLoad::Rack::RequestHandler.new(req)
 		expect(rh.is_main_load?).to eq(true)
+		expect(rh.should_render_fragment?('foo')).to eq(false)
 		expect(rh.fragment_name).to eq(nil)
 		expect(rh.load_path('bar')).to eq("/foo?#{FRAGMENT_KEY}=bar")
 	end
@@ -22,6 +23,8 @@ describe ProgressiveLoad::Rack::RequestHandler do
 		rh = ProgressiveLoad::Rack::RequestHandler.new(req)
 		expect(rh.is_main_load?).to eq(false)
 		expect(rh.fragment_name).to eq("my_partial")
+		expect(rh.should_render_fragment?('foo')).to eq(false)
+		expect(rh.should_render_fragment?('my_partial')).to eq(true)
 		expect(rh.load_path('bar')).to eq(nil)
 	end
 

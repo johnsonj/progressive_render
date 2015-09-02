@@ -5,4 +5,8 @@ class LoadTestController < ApplicationController
 	def partial
 		progressive_render
 	end
+
+	def block
+		progressive_render
+	end
 end

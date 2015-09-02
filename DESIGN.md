@@ -54,6 +54,7 @@ rh = RequestHandler.new(request)
 rh.is_main_load?
 rh.fragment_name
 rh.load_path(fragment_name)
+rh.should_render_partial?(fragment_name)
 ```
 
 # RailsBuilder #

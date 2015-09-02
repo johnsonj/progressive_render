@@ -4,7 +4,7 @@ module ProgressiveLoad
   module View
     include Helpers
 
-    def progressive_render(fragment_name, fragment_path=nil, options={})
+    def progressive_render(fragment_name, fragment_path=nil, options={}, &content)
       rh = ProgressiveLoad::Rack::RequestHandler.new(request)
 
       tc = ProgressiveLoad::Rails::PathResolver::TemplateContext.new
@@ -17,8 +17,12 @@ module ProgressiveLoad
       progressive_load_content(fragment_name, rh.is_main_load?) do
         if rh.is_main_load?
           render partial: 'progressive_load/placeholder'
-        elsif rh.fragment_name == fragment_name
-          render ({partial: pr.path_for(fragment_path)}).merge(options)
+        elsif rh.should_render_fragment?(fragment_name)
+          if content
+            content.call
+          else
+            render ({partial: pr.path_for(fragment_path)}).merge(options)
+          end
         else
           # Another progressive partial on this page but not the one we've been asked to render
           render text: ""
