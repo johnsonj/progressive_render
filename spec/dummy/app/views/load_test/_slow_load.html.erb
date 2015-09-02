@@ -1,2 +1,6 @@
-<% sleep 1 %>
+<%
+	# Don't perform the actual sleep if we're running as part of automated tests
+	# This sleep is for demonstration purposes of a slpw section of code.
+%>
+<% sleep 1 unless Rails.env.test? %>
 <h2 id="world">World!</h2>

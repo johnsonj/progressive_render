@@ -5,5 +5,8 @@ require 'rails/all'
 require 'rspec/rails'
 require 'progressive_load'
 
+# Set the application into the test enviornment
+ENV["RAILS_ENV"] = "test"
+
 # Load the dummy rails app
 require File.expand_path("../dummy/config/environment", __FILE__)
