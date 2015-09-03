@@ -1,6 +1,6 @@
 # ProgressiveLoad
 
-![ProgressiveLoad Demo](http://g.recordit.co/WIb75XbkET.gif)
+![ProgressiveLoad Demo](http://g.recordit.co/s4EYYte2sC.gif)
 
 Slow content got you down? Load it later! Use this gem to defer loading of specific page sections till after page load. They will be fetched via AJAX and placed on the page when ready.
 
