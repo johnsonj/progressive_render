@@ -1,0 +1,22 @@
+<h1>Main Page</h1>
+
+<%=progressive_render 'first' do %>
+	<div id="first">
+		First
+	</div>
+	<% sleep 1 unless Rails.env.test? %>
+<% end %>
+
+<%=progressive_render 'second' do %>
+	<div id="second">
+		Second
+	</div>
+	<% sleep 2 unless Rails.env.test? %>
+<% end %>
+
+<%=progressive_render 'third' do %>
+	<div id="third">
+		Third
+	</div>
+	<% sleep 3 unless Rails.env.test? %>
+<% end %>

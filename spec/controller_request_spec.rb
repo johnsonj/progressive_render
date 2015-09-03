@@ -1,25 +1,28 @@
 require 'rails_helper'
 
-def load_test_endpoint(endpoint, name="Testing #{endpoint}")
+def load_test_endpoint(endpoint, name="Testing #{endpoint}", sections=[], assert=[])
 	describe name do
 		it "renders the placeholder and can resolve the real partial" do
 			get endpoint
 			expect(response.body).to include("progressive-load-placeholder")
 
-			# Extract the new request URL
-			doc = Nokogiri::HTML(response.body)
-			path = doc.css('#slow_section_progressive_load')[0]["data-progressive-load-path"]
-			# Ensure it hasn't loaded the contnet
-			expect(doc.css('#world')).to be_empty
+			main_request_doc = Nokogiri::HTML(response.body)
+			sections.each_with_index do |s,i|
+				# Extract the new request URL
+				path = main_request_doc.css("##{s}_progressive_load")[0]["data-progressive-load-path"]
+				# Ensure it hasn't loaded the contnet
+				expect(main_request_doc.css("##{assert[i]}")).to be_empty
 
-			get path
-			doc = Nokogiri::HTML(response.body)
-			# Find the result
-			replacement = doc.css('#world')[0]
+				get path
+				partial_request_doc = Nokogiri::HTML(response.body)
+				# Find the result
+				replacement = partial_request_doc.css("##{assert[i]}")[0]
+			end
 		end
 	end
 end
 
 RSpec.describe LoadTestController, type: :request do
-	load_test_endpoint('/load_test/block', 'With a single block')
+	load_test_endpoint('/load_test/block', 'With a single block', ['slow_section'], ['world'])
+	load_test_endpoint('/load_test/multiple_blocks', 'With multiple blocks', ['first', 'second', 'third'], ['first', 'second', 'third'])
 end
