@@ -1,10 +1,11 @@
 PATH
   remote: ../../
   specs:
-    progressive_render (0.1.0)
+    progressive_render (0.1.1)
       coffee-rails
       jquery-rails
-      rails
+      nokogiri
+      rails (>= 4.1)
       railties
       sass-rails
       uglifier

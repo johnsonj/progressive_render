@@ -21,7 +21,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rails", "4.2.2"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "codeclimate-test-reporter"
   spec.add_development_dependency "rspec-rails"
@@ -33,6 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "coffee-rails"
   spec.add_dependency "railties"
   spec.add_dependency "jquery-rails"
-  spec.add_dependency "rails"
+  spec.add_dependency "rails", ">= 4.1"
   spec.add_dependency "nokogiri"
 end
