@@ -25,11 +25,9 @@ Then add the following to your application.js:
 
 ## Usage
 
-In the view you would like to progressively load, either name and reference the partial or pass a block
+Wrap slow content in your view with a call to `progressive_load 'friendly_name'` where `friendly_name` is an identifier unique to that view:
 
 ```erb
-<%=progressive_render 'unique_friendly_name', 'partial' %>
-
 <%=progressive_render 'my_slow_block' do %>
 	<h1>Content!</h1>
 	<% sleep 5 >

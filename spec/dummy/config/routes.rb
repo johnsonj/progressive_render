@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   root 'load_test#index'
 
   scope '/load_test' do
-    get '/partial' => 'load_test#partial', as: 'loat_test_partial'
     get '/block' => 'load_test#block', as: 'load_test_block'
   end
 

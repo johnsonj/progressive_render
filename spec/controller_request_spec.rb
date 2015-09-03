@@ -21,6 +21,5 @@ def load_test_endpoint(endpoint, name="Testing #{endpoint}")
 end
 
 RSpec.describe LoadTestController, type: :request do
-	load_test_endpoint('/load_test/partial', 'With a single partial')
 	load_test_endpoint('/load_test/block', 'With a single block')
 end
