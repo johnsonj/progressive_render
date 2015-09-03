@@ -4,12 +4,12 @@ def load_test_endpoint(endpoint, name="Testing #{endpoint}", sections=[], assert
 	describe name do
 		it "renders the placeholder and can resolve the real partial" do
 			get endpoint
-			expect(response.body).to include("progressive-load-placeholder")
+			expect(response.body).to include("progressive-render-placeholder")
 
 			main_request_doc = Nokogiri::HTML(response.body)
 			sections.each_with_index do |s,i|
 				# Extract the new request URL
-				path = main_request_doc.css("##{s}_progressive_load")[0]["data-progressive-load-path"]
+				path = main_request_doc.css("##{s}_progressive_render")[0]["data-progressive-render-path"]
 				# Ensure it hasn't loaded the contnet
 				expect(main_request_doc.css("##{assert[i]}")).to be_empty
 

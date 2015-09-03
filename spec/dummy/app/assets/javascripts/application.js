@@ -11,5 +11,5 @@
 // about supported directives.
 //
 //= require jquery
-//= require progressive_load
+//= require progressive_render
 //= require_tree .

@@ -1,15 +1,15 @@
-require 'progressive_load'
+require 'progressive_render'
 
-module ProgressiveLoad
+module ProgressiveRender
   module View
     include Helpers
 
     def progressive_render(fragment_name, &content)
-      rh = ProgressiveLoad::Rack::RequestHandler.new(request)
+      rh = ProgressiveRender::Rack::RequestHandler.new(request)
 
-      progressive_load_content(fragment_name, rh.is_main_load?) do
+      progressive_render_content(fragment_name, rh.is_main_load?) do
         if rh.is_main_load?
-          render partial: 'progressive_load/placeholder'
+          render partial: 'progressive_render/placeholder'
         elsif rh.should_render_fragment?(fragment_name)
           content.call
         else

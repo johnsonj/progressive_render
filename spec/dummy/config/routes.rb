@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope '/load_test' do
     get '/block' => 'load_test#block', as: 'load_test_block'
     get '/multiple_blocks' => 'load_test#multiple_blocks', as: 'load_test_multiple_blocks'
+    get '/example' => 'load_test#example'
   end
 
   # Example of regular route:

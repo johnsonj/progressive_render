@@ -1,31 +1,31 @@
-# ProgressiveLoad
+# ProgressiveRender
 
-![ProgressiveLoad Demo](http://g.recordit.co/s4EYYte2sC.gif)
+![ProgressiveRender Demo](http://g.recordit.co/s4EYYte2sC.gif)
 
 Slow content got you down? Load it later! Use this gem to defer loading of specific page sections till after page load. They will be fetched via AJAX and placed on the page when ready.
 
 ## State of Project
-[![Build Status](https://travis-ci.org/johnsonj/progressive_load.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_load) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
+[![Build Status](https://travis-ci.org/johnsonj/progressive_render.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_render) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_render/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_render) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_render/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_render/coverage)
 
-This gem is tracking a 1.0.0 release but should not be considered stable until then. [See open issues](https://github.com/johnsonj/progressive_load/milestones/1.0.0).
+This gem is tracking a 1.0.0 release but should not be considered stable until then. [See open issues](https://github.com/johnsonj/progressive_render/milestones/1.0.0).
 
 ## Installation
 
 Add this line to your application's Gemfile and run bundle
 
 ```ruby
-gem 'progressive_load', github: 'johnsonj/progressive_load'
+gem 'progressive_render', github: 'johnsonj/progressive_render'
 ```
 
 Then add the following to your application.js:
 
 ```javascript
-//=progressive_load
+//=progressive_render
 ```
 
 ## Usage
 
-Wrap slow content in your view with a call to `progressive_load 'friendly_name'` where `friendly_name` is an identifier unique to that view:
+Wrap slow content in your view with a call to `progressive_render 'friendly_name'` where `friendly_name` is an identifier unique to that view:
 
 ```erb
 <%=progressive_render 'my_slow_block' do %>
@@ -51,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/johnsonj/progressive_load. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/johnsonj/progressive_render. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

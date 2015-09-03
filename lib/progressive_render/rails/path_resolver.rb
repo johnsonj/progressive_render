@@ -1,4 +1,4 @@
-module ProgressiveLoad
+module ProgressiveRender
 	module Rails
 		class PathResolver
 			class TemplateContext

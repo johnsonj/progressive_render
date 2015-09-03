@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'progressive_load/version'
+require 'progressive_render/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "progressive_load"
-  spec.version       = ProgressiveLoad::VERSION
+  spec.name          = "progressive_render"
+  spec.version       = ProgressiveRender::VERSION
   spec.authors       = ["Jeff Johnson"]
   spec.email         = ["johnsonjeff@gmail.com"]
 
   spec.summary       = %q{Progressively load static or dynamic content on page load}
   spec.description   = %q{For large or expensive pages, use this gem to load less critical portions of the page. Especially useful for large queries or content that's hidden from the user on load. The best solution may be to optimize your content, but there's not always time for that.}
-  spec.homepage      = "https://github.com/johnsonj/progressive_load"
+  spec.homepage      = "https://github.com/johnsonj/progressive_render"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "coffee-rails"
   spec.add_dependency "railties"
   spec.add_dependency "jquery-rails"
+  spec.add_dependency "rails"
 end

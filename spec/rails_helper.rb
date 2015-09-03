@@ -3,7 +3,7 @@ require 'spec_helper'
 # Load rails and the entire gem
 require 'rails/all'
 require 'rspec/rails'
-require 'progressive_load'
+require 'progressive_render'
 
 # Set the application into the test enviornment
 ENV["RAILS_ENV"] = "test"

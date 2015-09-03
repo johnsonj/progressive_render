@@ -1,4 +1,10 @@
 class LoadTestController < ApplicationController
+	def example
+		# ...
+		progressive_render
+	end
+
+
 	def index
 	end
 

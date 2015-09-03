@@ -1,6 +1,6 @@
 require 'uri'
 
-module ProgressiveLoad
+module ProgressiveRender
 	module Rack
 		class RequestHandler
 			FRAGMENT_KEY = "load_partial"

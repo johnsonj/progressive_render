@@ -70,7 +70,7 @@ rb.controller_renderer => ProgressiveRenderer
 ```
 
 # ProgresiveRenderer #
-Status: TODO. Currently handled by ProgressiveLoad::Controller/View/Helpers
+Status: TODO. Currently handled by ProgressiveRender::Controller/View/Helpers
 
 Applies all policies to provide a simple render interface. 
 
@@ -83,7 +83,7 @@ pr.render(partial_name, &block=nil)
 ```
 
 # RailsInstaller #
-Status: TODO. Currently handled by ProgressiveLoad
+Status: TODO. Currently handled by ProgressiveRender
 
 Installs the view/controller renderer into ActionView/ActionController
 
@@ -97,7 +97,7 @@ RailsInstaller.mount_initializer(app)
 
 # Structure #
 lib/
-  progressive_load.rb (version)
+  progressive_render.rb (version)
   rails/
     rails.rb
     installer.rb
