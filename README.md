@@ -7,11 +7,11 @@ Slow content got you down? Load it later! Use this gem to defer loading of speci
 ## State of Project
 [![Build Status](https://travis-ci.org/johnsonj/progressive_render.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_render) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
 
-This gem is tracking a 1.0.0 release. [See open issues](https://github.com/johnsonj/progressive_render/milestones/1.0.0).
+This gem is young, please use released versions via RubyGems as master is not guarenteed to be stable until 1.0.0 is released. [See open issues](https://github.com/johnsonj/progressive_render/issues). Report any issues you have!
 
 ## Installation
 
-Add this line to your application's Gemfile and run bundle
+Add this line to your application's Gemfile and run `bundle install`
 
 ```ruby
 gem 'progressive_render'
