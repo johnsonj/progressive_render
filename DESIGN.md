@@ -33,14 +33,17 @@ dtp.path_for('bar') == foo/bar
 # ViewRenderer (Rails Specific) #
 Status: TODO
 
-Renders a partial to a string? Maybe. Controller vs. View may need seperate view renderers because controller needs to output the stream. Is there a difference between ActionController.render and ActionView.render?
+Interfaces between the rails renderer and rest of code.
 
 ## Basic Syntax ##
 ```ruby
-rt = ViewRenderer.new
-rt.render(full_path) # normal render
-rt.render_text(content) # render plain text (or safe HTML)
-rt.render_inline(content) # is this needed?
+vr = ViewRenderer.new
+# Render a specific partial (just placeholder likely)
+vr.render_partial(full_partial_path)
+# Render a full view
+vr.render_view(full_view_path)
+# Render a full view and extract a single fragment
+vr.render_fragment(full_view_path, fragment_name)
 ```
 
 # RequestHandler (Rack Specific) #
