@@ -30,7 +30,7 @@ Wrap slow content in your view with a call to `progressive_render 'friendly_name
 ```erb
 <%=progressive_render 'my_slow_block' do %>
 	<h1>Content!</h1>
-	<% sleep 5 >
+	<% sleep 5 %>
 <% end %>
 ```
 
