@@ -23,7 +23,7 @@ Then add the following to your application.js:
 //=progressive_render
 ```
 
-## Usage
+## Basic Usage
 
 Wrap slow content in your view with a call to `progressive_render 'friendly_name'` where `friendly_name` is an identifier unique to that view:
 
@@ -42,6 +42,23 @@ def action
     progressive_render
 end
 ```
+
+## Example Application
+
+For a more indepth example, see the test application located within this repository in `spec/dummy`
+
+## Customizing the Placeholder
+
+Each `progressive_render` call in the view can specify its own placeholder by providing a path to the partial you'd like to initially display to the user:
+
+```ruby
+<%=progressive_render 'custom_block', placeholder: 'shared/loading' do %>
+	<h1>Content!</h1>
+	<% sleep 5 %>
+<% end %>
+```
+
+The placeholder defaults to rendering the partial `progressive_render/placeholder` so if you'd like to override it globally create the file `app/views/progressive_render/placeholder.html.erb`. It will also work at the controller level, eg, `app/views/my_controller/progresive_render/...`
 
 ## Development
 

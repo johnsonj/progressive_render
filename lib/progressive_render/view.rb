@@ -4,10 +4,10 @@ module ProgressiveRender
   module View
     include Helpers
 
-    def progressive_render(fragment_name, &content)
+    def progressive_render(fragment_name, placeholder: 'progressive_render/placeholder', &content)
       progressive_render_content(fragment_name, progressive_request.is_main_load?) do
         if progressive_request.is_main_load?
-          render partial: 'progressive_render/placeholder'
+          render partial: placeholder
         elsif progressive_request.should_render_fragment?(fragment_name)
           content.call
         else

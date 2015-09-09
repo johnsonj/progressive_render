@@ -15,4 +15,8 @@ class LoadTestController < ApplicationController
 	def multiple_blocks
 		progressive_render
 	end
+
+	def custom_placeholder
+		progressive_render
+	end
 end
