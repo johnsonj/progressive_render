@@ -58,7 +58,7 @@ Each `progressive_render` call in the view can specify its own placeholder by pr
 <% end %>
 ```
 
-The placeholder defaults to rendering the partial `progressive_render/placeholder` so if you'd like to override it globally create the file `app/views/progressive_render/placeholder.html.erb`. It will also work at the controller level, eg, `app/views/my_controller/progresive_render/...`
+The placeholder defaults to rendering the partial `progressive_render/placeholder` so if you'd like to override it globally create the file `app/views/progressive_render/_placeholder.html.erb`. It will also work at the controller level, eg, `app/views/users/progresive_render/_placeholder.html.erb`
 
 ## Development
 
