@@ -1,6 +1,6 @@
-# ProgressiveRender
+# ProgressiveRender [![Gem Version](https://badge.fury.io/rb/progressive_render.svg)](http://badge.fury.io/rb/progressive_render)
 
-![ProgressiveRender Demo](http://g.recordit.co/s4EYYte2sC.gif)
+![ProgressiveRender Demo](http://g.recordit.co/s4EYYte2sC.gif) 
 
 Slow content got you down? Load it later! Use this gem to defer loading of specific page sections till after page load. They will be fetched via AJAX and placed on the page when ready.
 
@@ -30,7 +30,7 @@ Wrap slow content in your view with a call to `progressive_render 'friendly_name
 ```erb
 <%=progressive_render 'my_slow_block' do %>
 	<h1>Content!</h1>
-	<% sleep 5 >
+	<% sleep 5 %>
 <% end %>
 ```
 
