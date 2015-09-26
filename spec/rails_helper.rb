@@ -5,6 +5,9 @@ require 'rails/all'
 require 'rspec/rails'
 require 'progressive_render'
 
+# Debugging doesn't have to be hard
+require 'pry-byebug'
+
 # Set the application into the test enviornment
 ENV["RAILS_ENV"] = "test"
 

@@ -6,11 +6,9 @@ module ProgressiveRender
 
     def progressive_render(template=nil)
       if progressive_request.is_main_load?
-        render resolve_path(template)
+        progressive_renderer.render_view resolve_path(template)
       else
-        content = render_to_string template: resolve_path(template), layout: false
-        stripped = Nokogiri::HTML(content).at_css("div##{progressive_request.fragment_name}_progressive_render")
-        render text: stripped
+        progressive_renderer.render_fragment resolve_path(template), progressive_request.fragment_name 
       end
     end
 

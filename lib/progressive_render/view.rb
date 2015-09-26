@@ -7,12 +7,9 @@ module ProgressiveRender
     def progressive_render(fragment_name, placeholder: 'progressive_render/placeholder', &content)
       progressive_render_content(fragment_name, progressive_request.is_main_load?) do
         if progressive_request.is_main_load?
-          render partial: placeholder
+          progressive_renderer.render_partial placeholder
         elsif progressive_request.should_render_fragment?(fragment_name)
           content.call
-        else
-          # Another progressive partial on this page but not the one we've been asked to render
-          render text: ""
         end
       end
     end

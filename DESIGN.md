@@ -31,7 +31,7 @@ dtp.path_for('bar') == foo/bar
 ```
 
 # ViewRenderer (Rails Specific) #
-Status: TODO
+Status: Implemented
 
 Interfaces between the rails renderer and rest of code.
 
