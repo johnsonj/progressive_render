@@ -1,6 +1,6 @@
 # ProgressiveRender [![Gem Version](https://badge.fury.io/rb/progressive_render.svg)](http://badge.fury.io/rb/progressive_render) #
 
-![ProgressiveRender Demo](http://g.recordit.co/s4EYYte2sC.gif) 
+![ProgressiveRender Demo](http://g.recordit.co/NsoKrtutzi.gif) 
 
 Slow content got you down? Load it later! Use this gem to defer loading of portions of your page until after load. They will be fetched via AJAX and placed on the page when ready.
 
@@ -25,10 +25,10 @@ Then add the following to your application.js:
 
 ## Basic Usage ##
 
-Wrap slow content in your view with a call to `progressive_render 'friendly_name'` where `friendly_name` is an identifier unique to that view:
+Wrap slow content in your view with a call to `progressive_render`:
 
 ```erb
-<%=progressive_render 'my_slow_block' do %>
+<%=progressive_render do %>
 	<h1>Content!</h1>
 	<% sleep 5 %>
 <% end %>
@@ -52,7 +52,7 @@ For a more indepth example, see the test application located within this reposit
 Each `progressive_render` call in the view can specify its own placeholder by providing a path to the partial you'd like to initially display to the user:
 
 ```ruby
-<%=progressive_render 'custom_block', placeholder: 'shared/loading' do %>
+<%=progressive_render placeholder: 'shared/loading' do %>
 	<h1>Content!</h1>
 	<% sleep 5 %>
 <% end %>
@@ -62,9 +62,9 @@ The placeholder defaults to rendering the partial `progressive_render/placeholde
 
 ## Development ##
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. There is a dummy application located in spec/dummy/ that demonstrates a sample integration and can be used for interactive testing.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rspec` to run the tests. There is a dummy application located in `spec/dummy/` that demonstrates a sample integration and can be used for interactive testing.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org/gems/progressive_render).
 
 ## Contributing ##
 

@@ -3,8 +3,14 @@ require 'progressive_render'
 module ProgressiveRender
   module View
     include Helpers
+    
+    def progressive_render(deprecated_fragment_name = nil, placeholder: 'progressive_render/placeholder', cache_keys: nil, &content)
+      fragment_name = fragment_name_iterator.next!
 
-    def progressive_render(fragment_name, placeholder: 'progressive_render/placeholder', &content)
+      if deprecated_fragment_name
+        logger.warn "DEPRECATED (progressive_render gem): Literal fragment names are dperecated and will be removed in v1.0. The fragment name (#{deprecated_fragment_name}) will be ignored."
+      end
+
       progressive_render_content(fragment_name, progressive_request.is_main_load?) do
         if progressive_request.is_main_load?
           progressive_renderer.render_partial placeholder
@@ -20,6 +26,10 @@ module ProgressiveRender
                    progressive_render_path: progressive_request.load_path(fragment_name)}) do
         yield
       end
+    end
+
+    def fragment_name_iterator
+      @fni ||= FragmentNameIterator.new
     end
   end
 end

@@ -17,13 +17,14 @@ def load_test_endpoint(endpoint, name="Testing #{endpoint}", sections=[], assert
 				partial_request_doc = Nokogiri::HTML(response.body)
 				# Find the result
 				replacement = partial_request_doc.css("##{assert_loaded[i]}")[0]
+				expect(replacement).to_not be nil
 			end
 		end
 	end
 end
 
 RSpec.describe LoadTestController, type: :request do
-	load_test_endpoint('/load_test/block', 'With a single block', ['slow_section'], [], ['world'])
-	load_test_endpoint('/load_test/multiple_blocks', 'With multiple blocks', ['first', 'second', 'third'], [], ['first', 'second', 'third'])
-	load_test_endpoint('/load_test/custom_placeholder', 'With a custom placeholder', ['first'], ['custom_placeholder'], ['first'])
+	load_test_endpoint('/load_test/block', 'With a single block', [1], [], ['world'])
+	load_test_endpoint('/load_test/multiple_blocks', 'With multiple blocks', [1,2,3], [], ['first', 'second', 'third'])
+	load_test_endpoint('/load_test/custom_placeholder', 'With a custom placeholder', [1], ['custom_placeholder'], ['first'])
 end

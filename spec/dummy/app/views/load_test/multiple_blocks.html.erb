@@ -1,20 +1,20 @@
 <h1>Main Page</h1>
 
-<%=progressive_render 'first' do %>
+<%=progressive_render do %>
 	<div id="first">
 		First
 	</div>
 	<% sleep 1 unless Rails.env.test? %>
 <% end %>
 
-<%=progressive_render 'second' do %>
+<%=progressive_render do %>
 	<div id="second">
 		Second
 	</div>
 	<% sleep 2 unless Rails.env.test? %>
 <% end %>
 
-<%=progressive_render 'third' do %>
+<%=progressive_render do %>
 	<div id="third">
 		Third
 	</div>

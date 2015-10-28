@@ -5,6 +5,8 @@ require 'progressive_render/view'
 require 'progressive_render/rack'
 require 'progressive_render/rails'
 
+require 'progressive_render/fragment_name_iterator'
+
 module ProgressiveRender
   if defined?(::Rails) and Gem::Requirement.new('>= 3.1').satisfied_by?(Gem::Version.new ::Rails.version)
     module Rails
