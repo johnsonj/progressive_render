@@ -1,7 +1,7 @@
 PATH
   remote: ../../
   specs:
-    progressive_render (0.1.2)
+    progressive_render (0.2.0)
       coffee-rails
       jquery-rails
       nokogiri
