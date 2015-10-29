@@ -4,10 +4,13 @@
 
 Slow content got you down? Load it later! Use this gem to defer loading of portions of your page until after load. They will be fetched via AJAX and placed on the page when ready.
 
+## Why? ##
+You wrote all your code and it got a bit slow with all that production data. Or perhaps you have less important content that you want on the view, but it's not worth blocking the entire page for. With this gem there's almost no developer work to make this happen. All requests go through your controller and your normal filters so you're permissions are respected. The only added overhead is an additional round-trips for each partial and duplicated rendering of the main view. 
+
 ## State of Project ##
 [![Build Status](https://travis-ci.org/johnsonj/progressive_render.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_render) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
 
-This gem is young, please use released versions via RubyGems as master is not guarenteed to be stable until 1.0.0 is released. [See open issues](https://github.com/johnsonj/progressive_render/issues). Report any issues you have!
+This gem follows semantic versioning. The important part of that being the API will not make breaking changes except for major version numbers. Please use released versions via RubyGems for production applications. Old versions do not have a maintenance plan. [See open issues](https://github.com/johnsonj/progressive_render/issues). Report any issues you have!
 
 ## Installation ##
 
@@ -17,12 +20,19 @@ Add this line to your application's Gemfile and run `bundle install`
 gem 'progressive_render'
 ```
 
-Then add the following to your application.js:
+Then add the following to your `application.js`:
 
 ```javascript
 //=progressive_render
 ```
 
+If you plan on using the default placeholder, add this to your `application.css`:
+
+```css
+/*
+ *= require progressive_render
+ */
+```
 ## Basic Usage ##
 
 Wrap slow content in your view with a call to `progressive_render`:
@@ -51,7 +61,7 @@ For a more indepth example, see the test application located within this reposit
 
 Each `progressive_render` call in the view can specify its own placeholder by providing a path to the partial you'd like to initially display to the user:
 
-```ruby
+```erb
 <%=progressive_render placeholder: 'shared/loading' do %>
 	<h1>Content!</h1>
 	<% sleep 5 %>
@@ -64,12 +74,14 @@ The placeholder defaults to rendering the partial `progressive_render/placeholde
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rspec` to run the tests. There is a dummy application located in `spec/dummy/` that demonstrates a sample integration and can be used for interactive testing.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org/gems/progressive_render).
+## CI Environment ##
+
+Travis.ci is used to validate changes to the github project. The CI build runs the gem against multiple versions of rails/ruby. When making a change to any dependencies or the version number of the application, be sure to run `appraisal` to update the dependent Gemfile.locks.
 
 ## Contributing ##
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/johnsonj/progressive_render). 
+Bug reports and pull requests are welcome on [GitHub](https://github.com/johnsonj/progressive_render). Any contribution should not decrease test coverage significantly. Please feel free to [reach out](johnsonjeff@gmail.com) if you have an issues contributing.
 
 ## License ##
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+[MIT License](http://opensource.org/licenses/MIT).
