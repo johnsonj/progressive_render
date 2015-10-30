@@ -5,7 +5,7 @@
 Slow content got you down? Load it later! Use this gem to defer loading of portions of your page until after load. They will be fetched via AJAX and placed on the page when ready.
 
 ## Why? ##
-You wrote all your code and it got a bit slow with all that production data. Or perhaps you have less important content that you want on the view, but it's not worth blocking the entire page for. With this gem there's almost no developer work to make this happen. All requests go through your controller and your normal filters so you're permissions are respected. The only added overhead is an additional round-trips for each partial and duplicated rendering of the main view. 
+You wrote all your code and it got a bit slow with all that production data. Or perhaps you have less important content that you want on the view, but it's not worth blocking the entire page for. With this gem there's almost no developer work to make this happen. All requests go through your controller and your normal filters so you're permissions are respected. The only added overhead is an additional round-trip for each partial and duplicated rendering of the main view. 
 
 ## State of Project ##
 [![Build Status](https://travis-ci.org/johnsonj/progressive_render.svg?branch=master)](https://travis-ci.org/johnsonj/progressive_render) [![Code Climate](https://codeclimate.com/github/johnsonj/progressive_load/badges/gpa.svg)](https://codeclimate.com/github/johnsonj/progressive_load) [![Test Coverage](https://codeclimate.com/github/johnsonj/progressive_load/badges/coverage.svg)](https://codeclimate.com/github/johnsonj/progressive_load/coverage)
