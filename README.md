@@ -23,7 +23,7 @@ gem 'progressive_render'
 Then add the following to your `application.js`:
 
 ```javascript
-//=progressive_render
+//= require progressive_render
 ```
 
 If you plan on using the default placeholder, add this to your `application.css`:
