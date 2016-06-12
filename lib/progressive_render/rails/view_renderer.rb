@@ -16,7 +16,7 @@ module ProgressiveRender
       def render_fragment(path, fragment_name)
         content = context.render_to_string template: path, layout: false
         stripped = Nokogiri::HTML(content).at_css("div##{fragment_name}_progressive_render")
-        context.render text: stripped.to_html
+        context.render plain: stripped.to_html
       end
     end
   end
