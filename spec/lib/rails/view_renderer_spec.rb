@@ -27,6 +27,6 @@ describe ProgressiveRender::Rails::ViewRenderer do
 		vr = ProgressiveRender::Rails::ViewRenderer.new(context)
 		vr.render_fragment('', 'example')
 
-		expect(context).to have_received(:render).with(text: body)
+		expect(context).to have_received(:render).with(plain: body)
 	end
 end

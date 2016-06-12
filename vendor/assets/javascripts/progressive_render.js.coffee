@@ -18,3 +18,5 @@ load_missing_content = ->
     $.ajax url: $this.data('progressive-render-path'), cache: false, success: (response) -> 
       $this.html(response); 
       $(document).trigger('progressive_render:end')
+      
+  $(document).on 'turbolinks:load', load_missing_content if window.Turbolinks
