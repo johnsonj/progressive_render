@@ -6,6 +6,7 @@ $ ->
 setup_listener = ->
   $(document).on 'progressive_render:end', load_missing_content
   $(document).on 'ajax:end', load_missing_content
+  $(document).on 'turbolinks:load', load_missing_content if window.Turbolinks
 
 load_missing_content = ->
   $('[data-progressive-render-placeholder=true]').each ->
@@ -18,5 +19,3 @@ load_missing_content = ->
     $.ajax url: $this.data('progressive-render-path'), cache: false, success: (response) -> 
       $this.html(response); 
       $(document).trigger('progressive_render:end')
-      
-  $(document).on 'turbolinks:load', load_missing_content if window.Turbolinks
