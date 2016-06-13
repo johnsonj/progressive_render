@@ -82,6 +82,21 @@ Travis.ci is used to validate changes to the github project. The CI build runs t
 
 Bug reports and pull requests are welcome on [GitHub](https://github.com/johnsonj/progressive_render). Any contribution should not decrease test coverage significantly. Please feel free to [reach out](johnsonjeff@gmail.com) if you have an issues contributing.
 
+## Release Process ##
+
+```bash
+gem install gem-release
+gem bump --version [major, minor, patch]
+cd spec/dummy
+bundle install
+cd ../../
+appraisal install
+git add spec/dummy/Gemfile.lock
+git add gemfiles/*.lock
+git commit -am "Bumping collateral for new gem version"
+gem release --tag
+```
+
 ## License ##
 
 [MIT License](http://opensource.org/licenses/MIT).
