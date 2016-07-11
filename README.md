@@ -4,7 +4,7 @@
 
 Slow content got you down? Load it later! Use this gem to defer loading of portions of your page until after load. They will be fetched via AJAX and placed on the page when ready.
 
-For a quick start, see [Drifting Ruby #003 - Progressive Render](https://www.driftingruby.com/episodes/progressive-render) based on version 0.3.0.
+For a quick start, see [Drifting Ruby #033 - Progressive Render](https://www.driftingruby.com/episodes/progressive-render) based on version 0.3.0.
 
 ## Why? ##
 You wrote all your code and it got a bit slow with all that production data. Or perhaps you have less important content that you want on the view, but it's not worth blocking the entire page for. With this gem there's almost no developer work to make this happen. All requests go through your controller and your normal filters so you're permissions are respected. The only added overhead is an additional round-trip for each partial and duplicated rendering of the main view. 
