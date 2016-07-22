@@ -11,9 +11,8 @@ setup_listener = ->
 load_missing_content = ->
   $('[data-progressive-render-placeholder=true]').each ->
     $this = $(this)
-    # Don't re-process div's we've already seen
-    return if $this.data('progressive-render-setup')
-    $this.data('progressive-render-setup', true)
+    # Remove the designation on this partial from the DOM so we don't attempt to re-load it later.
+    $this.attr('data-progressive-render-placeholder', false)
 
     # Start the load
     $.ajax url: $this.data('progressive-render-path'), cache: false, success: (response) -> 
