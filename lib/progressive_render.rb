@@ -17,11 +17,11 @@ module ProgressiveRender
 
         initializer "progressive_render.install" do
           ActionController::Base.class_eval do
-            include ProgressiveRender::Controller
+            prepend ProgressiveRender::Controller
           end
 
           ActionView::Base.class_eval do
-            include ProgressiveRender::View
+            prepend ProgressiveRender::View
           end
         end
       end

@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Progressive Render Example</title>
+  <title>Progressive Render Custom Layout</title>
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+<style>
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
 </head>
 <body>
+<h1 id="custom_layout">Custom Layout</h1>
 
 <%= yield %>
 
