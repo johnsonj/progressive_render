@@ -8,7 +8,7 @@ module ProgressiveRender
       fragment_name = fragment_name_iterator.next!
 
       if deprecated_fragment_name
-        logger.warn "DEPRECATED (progressive_render gem): Literal fragment names are dperecated and will be removed in v1.0. The fragment name (#{deprecated_fragment_name}) will be ignored."
+        logger.warn "DEPRECATED (progressive_render gem): Literal fragment names are deprecated and will be removed in v1.0. The fragment name (#{deprecated_fragment_name}) will be ignored."
       end
 
       progressive_render_content(fragment_name, progressive_request.is_main_load?) do
@@ -23,7 +23,7 @@ module ProgressiveRender
     def progressive_render_content(fragment_name, placeholder=true)
       content_tag(:div, id: "#{fragment_name}_progressive_render", 
             data: {progressive_render_placeholder: placeholder, 
-                   progressive_render_path: progressive_request.load_path(fragment_name)}) do
+                   progressive_render_path: progressive_request.load_path(fragment_name)}.select {|k,v| !v.nil? }) do
         yield
       end
     end
