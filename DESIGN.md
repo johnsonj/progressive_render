@@ -60,18 +60,6 @@ rh.load_path(fragment_name)
 rh.should_render_partial?(fragment_name)
 ```
 
-# RailsBuilder #
-Status: TODO
-
-Takes all necessary context and gives access to the ProgressiveRenderer
-
-## Basic Syntax ##
-```ruby
-rb = RailsBuilder.new(request)
-rb.view_renderer => ProgressiveRenderer
-rb.controller_renderer => ProgressiveRenderer
-```
-
 # Rails Engine #
 Status: Implemented
 
