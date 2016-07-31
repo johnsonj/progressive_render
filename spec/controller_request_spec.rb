@@ -36,12 +36,16 @@ def load_test_endpoint(endpoint, name: "Testing #{endpoint}", sections: [], asse
 end
 
 RSpec.describe LoadTestController, type: :request do
+	# Basic examples
 	load_test_endpoint '/load_test/block',              name: 'With a single block',       sections: [1],     assert_loaded: ['#world']
 	load_test_endpoint '/load_test/multiple_blocks',    name: 'With multiple blocks',      sections: [1,2,3], assert_loaded: ['#first', '#second', '#third']
 	load_test_endpoint '/load_test/custom_placeholder', name: 'With a custom placeholder', sections: [1],     assert_preloaded: ['#custom_placeholder'], assert_loaded: ['#first']
 	load_test_endpoint '/load_test/render_params',      name: 'With custom render params', sections: [1],     assert_preloaded: ['#custom_layout'],      assert_loaded: ['#world']
-	
+
+	# Deprecated usage
 	load_test_endpoint '/load_test/deprecated_explicit_call',               name: 'Deprecated: Explicit call in controller',                    sections: [1],     assert_loaded: ['#world']
 	load_test_endpoint '/load_test/deprecated_explicit_call_with_template', name: 'Deprecated: Explicit call in controller with template path', sections: [1],     assert_loaded: ['#world']
 
+	# Specific bugs
+	load_test_endpoint '/load_test/atom_repro',      name: 'With an atom format', sections: [1],     assert_preloaded: ['#outside'],      assert_loaded: ['#inside']
 end

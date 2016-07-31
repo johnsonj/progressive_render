@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   scope '/load_test' do
     ['block', 'multiple_blocks', 'custom_placeholder', 'example', 'render_params',
-     'deprecated_explicit_call', 'deprecated_explicit_call_with_template'].each do |endpoint|
+     'deprecated_explicit_call', 'deprecated_explicit_call_with_template',
+     'atom_repro'].each do |endpoint|
       get endpoint => "load_test##{endpoint}", as: "load_test_#{endpoint}"
     end
   end
