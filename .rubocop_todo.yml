@@ -18,10 +18,6 @@ Metrics/MethodLength:
     - 'spec/controller_request_spec.rb'
 
 # Offense count: 1
-Metrics/PerceivedComplexity:
-  Max: 9
-
-# Offense count: 1
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
