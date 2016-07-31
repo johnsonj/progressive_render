@@ -6,16 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
-# SupportedStyles: keyword, variable, start_of_line
-Lint/EndAlignment:
-  Exclude:
-    - 'lib/progressive_render/rails/controller.rb'
-    - 'lib/progressive_render/rails/engine.rb'
-
 # Offense count: 2
 Lint/HandleExceptions:
   Exclude:

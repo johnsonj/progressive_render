@@ -49,6 +49,6 @@ module ProgressiveRender
         yield
         @in_progressive_render = false
       end
-  end
     end
+  end
 end

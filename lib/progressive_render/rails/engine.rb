@@ -16,6 +16,6 @@ module ProgressiveRender
           prepend ProgressiveRender::Rails::View
         end
       end
-  end
     end
+  end
 end
