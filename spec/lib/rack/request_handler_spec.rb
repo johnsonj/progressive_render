@@ -40,5 +40,6 @@ describe ProgressiveRender::Rack::RequestHandler do
 
     expect(get_request[FRAGMENT_KEY]).to be_nil
     expect(get_request).to eq(get_request)
+    expect(get_clone).to eq(get_request)
   end
 end

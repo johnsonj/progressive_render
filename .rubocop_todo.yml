@@ -7,12 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 2
-Lint/UselessAssignment:
-  Exclude:
-    - 'lib/progressive_render/rails/path_resolver.rb'
-    - 'spec/lib/rack/request_handler_spec.rb'
-
-# Offense count: 2
 Metrics/AbcSize:
   Max: 49
 
