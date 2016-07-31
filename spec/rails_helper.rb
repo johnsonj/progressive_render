@@ -9,7 +9,7 @@ require 'progressive_render'
 require 'pry-byebug'
 
 # Set the application into the test enviornment
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 
 # Load the dummy rails app
-require File.expand_path("../dummy/config/environment", __FILE__)
+require File.expand_path('../dummy/config/environment', __FILE__)

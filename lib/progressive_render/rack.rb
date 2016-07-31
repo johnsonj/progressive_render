@@ -1,6 +1,6 @@
 require 'progressive_render/rack/request_handler'
 
 module ProgressiveRender
-	module Rack
-	end
+  module Rack
+  end
 end
