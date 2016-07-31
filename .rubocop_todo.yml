@@ -17,13 +17,6 @@ Metrics/MethodLength:
   Exclude:
     - 'spec/controller_request_spec.rb'
 
-# Offense count: 1
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'spec/dummy/test/test_helper.rb'
-
 # Offense count: 12
 Style/Documentation:
   Exclude:
