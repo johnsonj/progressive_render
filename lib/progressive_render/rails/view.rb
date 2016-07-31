@@ -6,6 +6,20 @@ module ProgressiveRender
     module View
       include Helpers
 
+      # Mark a section of content to be loaded after initial view of the page.
+      #
+      # == Usage
+      #  <%= progressive_render do %>
+      #    <h2>Content!</h2>
+      #  <% end %>
+      #
+      # == Specify a custom placeholder
+      # The progressive_render method puts a simple spinner on the page by default but
+      # that can be customized per section by passing a path to a partial via `placeholder`
+      #
+      #  <%= progressive_render placeholder: 'shared/custom_placehodler' do %>
+      #    <h2>More Content!</h2>
+      #  <% end %>
       def progressive_render(deprecated_fragment_name = nil,
                              placeholder: 'progressive_render/placeholder')
         if deprecated_fragment_name
