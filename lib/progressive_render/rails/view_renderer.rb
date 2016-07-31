@@ -4,8 +4,8 @@ module ProgressiveRender
   module Rails
     class ViewRenderer
       attr_accessor :context
-      def initialize(_view_context)
-        self.context = _view_context
+      def initialize(view_context)
+        self.context = view_context
       end
 
       def render_partial(path)

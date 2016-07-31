@@ -5,8 +5,8 @@ module ProgressiveRender
     class RequestHandler
       FRAGMENT_KEY = 'load_partial'.freeze
 
-      def initialize(_request)
-        @request = _request
+      def initialize(request)
+        @request = request
       end
 
       def is_main_load?
@@ -17,8 +17,8 @@ module ProgressiveRender
         @request.GET[FRAGMENT_KEY]
       end
 
-      def should_render_fragment?(_fragment_name)
-        !is_main_load? && fragment_name == _fragment_name
+      def should_render_fragment?(user_fragment_name)
+        !is_main_load? && fragment_name == user_fragment_name
       end
 
       def load_path(fragment_name)

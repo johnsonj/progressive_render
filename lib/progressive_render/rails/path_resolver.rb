@@ -18,8 +18,8 @@ module ProgressiveRender
       class InvalidPathException < RuntimeError
       end
 
-      def initialize(_template_context)
-        @context = _template_context
+      def initialize(template_context)
+        @context = template_context
       end
 
       def path_for(view_name = nil)
