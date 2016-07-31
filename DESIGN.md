@@ -72,19 +72,6 @@ rb.view_renderer => ProgressiveRenderer
 rb.controller_renderer => ProgressiveRenderer
 ```
 
-# ProgresiveRenderer #
-Status: TODO. Currently handled by ProgressiveRender::Controller/View/Helpers
-
-Applies all policies to provide a simple render interface. 
-
-Can we get around the partial_renderer field? It determines if it should render placeholders in place of the view passed into it. 
-
-## Basic Syntax ##
-```ruby
-pr = ProgressiveRenderer.new(request_handler, view_renderer, path_resolver, partial_renderer:bool)
-pr.render(partial_name, &block=nil)
-```
-
 # Rails Engine #
 Status: Implemented
 
@@ -98,8 +85,9 @@ end
 ```
 
 # Structure #
+```
 lib/
-  progressive_render.rb (version)
+  progressive_render.rb
   rails/
     rails.rb
     engine.rb
@@ -108,4 +96,4 @@ lib/
     path_resolver.rb
   rack/
     request_handler.rb
-  progressive_renderer.rb
+```
