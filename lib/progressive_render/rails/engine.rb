@@ -8,11 +8,11 @@ class Engine < ::Rails::Engine
 
 	initializer "progressive_render.install" do
 		ActionController::Base.class_eval do
-			prepend ProgressiveRender::Controller
+			prepend ProgressiveRender::Rails::Controller
 		end
 
 		ActionView::Base.class_eval do
-			prepend ProgressiveRender::View
+			prepend ProgressiveRender::Rails::View
 		end
 	end
 end

@@ -1,7 +1,3 @@
-require 'progressive_render/version'
-require 'progressive_render/controller'
-require 'progressive_render/view'
-
 require 'progressive_render/rack'
 
 require 'progressive_render/fragment_name_iterator'
