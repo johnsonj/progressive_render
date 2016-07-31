@@ -5,10 +5,7 @@ module ProgressiveRender
         attr_accessor :controller, :action, :type
 
         def valid?
-          return false if type != :view && type != :controller
-          return false if controller.nil? || controller.empty?
-          return false if action.nil? || action.empty?
-          true
+          valid_type? && valid_controller? && valid_action?
         end
       end
 
@@ -41,6 +38,18 @@ module ProgressiveRender
 
       def view_action?
         @context.type == :view
+      end
+
+      def valid_type?
+        type == :view || type == :controller
+      end
+
+      def valid_controller?
+        !controller.nil? && !controller.empty?
+      end
+
+      def valid_action?
+        !action.nil? && !action.empty?
       end
     end
   end
