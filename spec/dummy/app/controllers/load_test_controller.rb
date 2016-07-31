@@ -30,17 +30,10 @@ class LoadTestController < ApplicationController
     respond_to do |format|
       # https://github.com/johnsonj/progressive_render/issues/19#issuecomment-236450508
       # Without this format.js call, rails tries to render the 'atom' format on the progressive_load
-      format.js do
-      end
-      format.atom do
-        raise 'atom'
-      end
-      format.html do
-        render layout: 'custom_layout'
-      end
-      format.rss do
-        raise 'RSS'
-      end
+      format.js {}
+      format.atom { raise 'atom' }
+      format.html { render layout: 'custom_layout' }
+      format.rss { raise 'RSS' }
     end
   end
 end

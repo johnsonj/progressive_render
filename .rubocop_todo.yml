@@ -14,7 +14,8 @@ Metrics/AbcSize:
 # Offense count: 3
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
-  Max: 23
+  Exclude:
+    - 'spec/controller_request_spec.rb'
 
 # Offense count: 1
 Metrics/PerceivedComplexity:

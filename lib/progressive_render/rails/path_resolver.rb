@@ -7,6 +7,20 @@ module ProgressiveRender
         def valid?
           valid_type? && valid_controller? && valid_action?
         end
+
+        private
+
+        def valid_type?
+          type == :view || type == :controller
+        end
+
+        def valid_controller?
+          !controller.nil? && !controller.empty?
+        end
+
+        def valid_action?
+          !action.nil? && !action.empty?
+        end
       end
 
       class InvalidTemplateContextException < RuntimeError
@@ -38,18 +52,6 @@ module ProgressiveRender
 
       def view_action?
         @context.type == :view
-      end
-
-      def valid_type?
-        type == :view || type == :controller
-      end
-
-      def valid_controller?
-        !controller.nil? && !controller.empty?
-      end
-
-      def valid_action?
-        !action.nil? && !action.empty?
       end
     end
   end
