@@ -60,53 +60,28 @@ rh.load_path(fragment_name)
 rh.should_render_partial?(fragment_name)
 ```
 
-# RailsBuilder #
-Status: TODO
-
-Takes all necessary context and gives access to the ProgressiveRenderer
-
-## Basic Syntax ##
-```ruby
-rb = RailsBuilder.new(request)
-rb.view_renderer => ProgressiveRenderer
-rb.controller_renderer => ProgressiveRenderer
-```
-
-# ProgresiveRenderer #
-Status: TODO. Currently handled by ProgressiveRender::Controller/View/Helpers
-
-Applies all policies to provide a simple render interface. 
-
-Can we get around the partial_renderer field? It determines if it should render placeholders in place of the view passed into it. 
-
-## Basic Syntax ##
-```ruby
-pr = ProgressiveRenderer.new(request_handler, view_renderer, path_resolver, partial_renderer:bool)
-pr.render(partial_name, &block=nil)
-```
-
-# RailsInstaller #
-Status: TODO. Currently handled by ProgressiveRender
+# Rails Engine #
+Status: Implemented
 
 Installs the view/controller renderer into ActionView/ActionController
 
 ## Basic Syntax ##
 ```ruby
-RailsInstaller.mount_initializer
-# Or?
-RailsInstaller.mount_initializer(app)
+class Engine < ::Rails::Engine
+  # .. installation code ..
+end
 ```
 
-
 # Structure #
+```
 lib/
-  progressive_render.rb (version)
+  progressive_render.rb
   rails/
     rails.rb
-    installer.rb
+    engine.rb
     builder.rb
     view_renderer.rb
     path_resolver.rb
   rack/
     request_handler.rb
-  progressive_renderer.rb
+```
