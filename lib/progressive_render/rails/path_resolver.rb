@@ -26,16 +26,18 @@ module ProgressiveRender
         raise InvalidTemplateContextException unless @context && @context.valid?
         raise InvalidPathException if (view_name.nil? || view_name.empty?) && view_action?
 
-        path = "#{@context.controller.downcase}/"
-
-        path += if view_name.nil? || view_name.empty?
-                  @context.action.to_s
-                else
-                  view_name.to_s
-                end
+        "#{@context.controller.downcase}/#{path_suffix_for(view_name)}"
       end
 
       private
+
+      def path_suffix_for(view_name)
+        if view_name.nil? || view_name.empty?
+          @context.action.to_s
+        else
+          view_name.to_s
+        end
+      end
 
       def view_action?
         @context.type == :view

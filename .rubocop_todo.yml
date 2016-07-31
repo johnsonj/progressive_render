@@ -6,9 +6,10 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 2
+# Offense count: 1
 Metrics/AbcSize:
-  Max: 49
+  Exclude:
+    - 'spec/controller_request_spec.rb'
 
 # Offense count: 2
 Metrics/CyclomaticComplexity:
