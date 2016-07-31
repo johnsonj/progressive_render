@@ -4,6 +4,11 @@ rvm:
   - 2.2.5
   - 2.3.1
   - ruby-head
+# Suppress the container warning
+sudo: false
+
+# Cache dependencies
+cache: bundler
 
 before_install: gem install bundler -v 1.10.3
 
