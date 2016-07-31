@@ -85,25 +85,24 @@ pr = ProgressiveRenderer.new(request_handler, view_renderer, path_resolver, part
 pr.render(partial_name, &block=nil)
 ```
 
-# RailsInstaller #
-Status: TODO. Currently handled by ProgressiveRender
+# Rails Engine #
+Status: Implemented
 
 Installs the view/controller renderer into ActionView/ActionController
 
 ## Basic Syntax ##
 ```ruby
-RailsInstaller.mount_initializer
-# Or?
-RailsInstaller.mount_initializer(app)
+class Engine < ::Rails::Engine
+  # .. installation code ..
+end
 ```
-
 
 # Structure #
 lib/
   progressive_render.rb (version)
   rails/
     rails.rb
-    installer.rb
+    engine.rb
     builder.rb
     view_renderer.rb
     path_resolver.rb
