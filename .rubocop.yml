@@ -8,4 +8,4 @@ AllCops:
     - spec/dummy/bin/rake
     - spec/dummy/bin/rails
     - spec/dummy/bin/spring
-    - 'vendor/**/*'
+    - vendor/**/*
