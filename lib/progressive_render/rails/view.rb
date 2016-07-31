@@ -9,8 +9,8 @@ module ProgressiveRender
       def progressive_render(deprecated_fragment_name = nil,
                              placeholder: 'progressive_render/placeholder')
         if deprecated_fragment_name
-          logger.warn "DEPRECATED (progressive_render): Literal fragment names are deprecated and will be removed
-            in v1.0. The fragment name (#{deprecated_fragment_name}) will be ignored."
+          logger.warn %(DEPRECATED (progressive_render): Literal fragment names are deprecated and will be removed
+            in v1.0. The fragment name (#{deprecated_fragment_name}) will be ignored.")
         end
 
         progressive_render_impl(placeholder: placeholder) do

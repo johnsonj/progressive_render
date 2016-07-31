@@ -8,9 +8,9 @@ module ProgressiveRender
       include Helpers
 
       def progressive_render(template = nil)
-        logger.warn "DEPRECATED: calling 'progressive_render' directly in the controller
+        logger.warn %(DEPRECATED: calling 'progressive_render' directly in the controller
           is deprecated and will be removed in future versions.
-          It is no longer necessary to explicitly call the render method."
+          It is no longer necessary to explicitly call the render method.)
         render template
       end
 

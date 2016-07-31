@@ -5,7 +5,7 @@ Metrics/LineLength:
 
 AllCops:
   Exclude:
-    - progressive_load.gemspec
     - spec/dummy/bin/rake
     - spec/dummy/bin/rails
     - spec/dummy/bin/spring
+    - 'vendor/**/*'
