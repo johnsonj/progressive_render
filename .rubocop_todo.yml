@@ -16,20 +16,3 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Exclude:
     - 'spec/controller_request_spec.rb'
-
-# Offense count: 12
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/progressive_render.rb'
-    - 'lib/progressive_render/fragment_name_iterator.rb'
-    - 'lib/progressive_render/rack.rb'
-    - 'lib/progressive_render/rack/request_handler.rb'
-    - 'lib/progressive_render/rails.rb'
-    - 'lib/progressive_render/rails/controller.rb'
-    - 'lib/progressive_render/rails/engine.rb'
-    - 'lib/progressive_render/rails/helpers.rb'
-    - 'lib/progressive_render/rails/path_resolver.rb'
-    - 'lib/progressive_render/rails/view.rb'
-    - 'lib/progressive_render/rails/view_renderer.rb'

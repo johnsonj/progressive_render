@@ -2,6 +2,7 @@ require 'nokogiri'
 
 module ProgressiveRender
   module Rails
+    # Responsible for rendering a full page and extracting fragments for a progressive render.
     class ViewRenderer
       attr_accessor :context
       def initialize(view_context)

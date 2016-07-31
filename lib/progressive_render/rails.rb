@@ -7,6 +7,7 @@ require 'progressive_render/rails/view'
 require 'progressive_render/rails/controller'
 
 module ProgressiveRender
+  # Rails specific functionality
   module Rails
   end
 end

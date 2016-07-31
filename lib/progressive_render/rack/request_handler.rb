@@ -2,6 +2,8 @@ require 'uri'
 
 module ProgressiveRender
   module Rack
+    # Wraps a given rack request to determine what sort of request we're dealing with
+    # and what specific fragment the request is for when it's a progressive request.
     class RequestHandler
       FRAGMENT_KEY = 'load_partial'.freeze
 

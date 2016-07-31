@@ -1,6 +1,9 @@
 module ProgressiveRender
   module Rails
+    # Resolve set of request parameters to a full path to a template file
     class PathResolver
+      # Holds the request parameters.
+      # Used to decouple the ProgressiveRequest from the renderer.
       class TemplateContext
         attr_accessor :controller, :action, :type
 

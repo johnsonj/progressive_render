@@ -2,6 +2,8 @@ require 'progressive_render/rails/helpers'
 
 module ProgressiveRender
   module Rails
+    # Rails controller methods, this module is installed into ActionController
+    # These methods should not generally be called by user code besides 'render'
     module Controller
       include Helpers
 
@@ -10,17 +12,6 @@ module ProgressiveRender
           is deprecated and will be removed in future versions.
           It is no longer necessary to explicitly call the render method."
         render template
-      end
-
-      def resolve_path(template)
-        tc = Rails::PathResolver::TemplateContext.new
-        tc.type       = :controller
-        tc.controller = request.params['controller']
-        tc.action     = request.params['action']
-
-        pr = Rails::PathResolver.new(tc)
-
-        pr.path_for(template)
       end
 
       def render(options = nil, extra_options = {}, &block)
@@ -36,6 +27,19 @@ module ProgressiveRender
             progressive_renderer.render_fragment resolve_path(template), progressive_request.fragment_name
           end
         end
+      end
+
+      private
+
+      def resolve_path(template)
+        tc = Rails::PathResolver::TemplateContext.new
+        tc.type       = :controller
+        tc.controller = request.params['controller']
+        tc.action     = request.params['action']
+
+        pr = Rails::PathResolver.new(tc)
+
+        pr.path_for(template)
       end
 
       def in_progressive_render?

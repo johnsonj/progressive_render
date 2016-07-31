@@ -1,5 +1,7 @@
 module ProgressiveRender
   module Rails
+    # Rails uses this class to install progressive_render into an application
+    # It is responsible for any setup needed for the gem to function
     class Engine < ::Rails::Engine
       initializer 'progressive_render.assets.precompile' do |app|
         app.config.assets.precompile += %w(progressive_render.gif

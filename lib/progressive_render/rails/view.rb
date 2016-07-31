@@ -2,6 +2,7 @@ require 'progressive_render/rails/helpers'
 
 module ProgressiveRender
   module Rails
+    # Provides methods for application view
     module View
       include Helpers
 
@@ -16,6 +17,8 @@ module ProgressiveRender
           yield
         end
       end
+
+      private
 
       def progressive_render_impl(placeholder: 'progressive_render/placeholder')
         fragment_name = fragment_name_iterator.next!
