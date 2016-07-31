@@ -26,7 +26,7 @@ module ProgressiveRender
       def render(options = nil, extra_options = {}, &block)
         # Fall back to the ActionView renderer if we're on the main page load
         # OR we are being called from inside our own code (in_progressive_render?)
-        if progressive_request.is_main_load? || in_progressive_render?
+        if progressive_request.main_load? || in_progressive_render?
           super
         else
           in_progressive_render do

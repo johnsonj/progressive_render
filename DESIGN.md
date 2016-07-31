@@ -54,7 +54,7 @@ Parses the request object to determine if this is the main load of the app and i
 ## Basic Syntax ##
 ```ruby
 rh = RequestHandler.new(request)
-rh.is_main_load?
+rh.main_load?
 rh.fragment_name
 rh.load_path(fragment_name)
 rh.should_render_partial?(fragment_name)

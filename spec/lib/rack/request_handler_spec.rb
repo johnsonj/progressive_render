@@ -9,7 +9,7 @@ describe ProgressiveRender::Rack::RequestHandler do
     allow(req).to receive(:path).and_return('/foo')
 
     rh = ProgressiveRender::Rack::RequestHandler.new(req)
-    expect(rh.is_main_load?).to eq(true)
+    expect(rh.main_load?).to eq(true)
     expect(rh.should_render_fragment?('foo')).to eq(false)
     expect(rh.fragment_name).to eq(nil)
     expect(rh.load_path('bar')).to eq("/foo?#{FRAGMENT_KEY}=bar")
@@ -21,7 +21,7 @@ describe ProgressiveRender::Rack::RequestHandler do
     allow(req).to receive(:path).and_return('/bar/baz')
 
     rh = ProgressiveRender::Rack::RequestHandler.new(req)
-    expect(rh.is_main_load?).to eq(false)
+    expect(rh.main_load?).to eq(false)
     expect(rh.fragment_name).to eq('my_partial')
     expect(rh.should_render_fragment?('foo')).to eq(false)
     expect(rh.should_render_fragment?('my_partial')).to eq(true)

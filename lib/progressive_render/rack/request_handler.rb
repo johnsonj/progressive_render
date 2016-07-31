@@ -9,7 +9,7 @@ module ProgressiveRender
         @request = request
       end
 
-      def is_main_load?
+      def main_load?
         fragment_name.nil? || fragment_name == ''
       end
 
@@ -18,11 +18,11 @@ module ProgressiveRender
       end
 
       def should_render_fragment?(user_fragment_name)
-        !is_main_load? && fragment_name == user_fragment_name
+        !main_load? && fragment_name == user_fragment_name
       end
 
       def load_path(fragment_name)
-        return nil unless is_main_load?
+        return nil unless main_load?
 
         # Ensure we get a fresh copy of the request and aren't modifying it
         query = @request.GET.clone

@@ -20,8 +20,8 @@ module ProgressiveRender
       def progressive_render_impl(placeholder: 'progressive_render/placeholder')
         fragment_name = fragment_name_iterator.next!
 
-        progressive_render_content(fragment_name, progressive_request.is_main_load?) do
-          if progressive_request.is_main_load?
+        progressive_render_content(fragment_name, progressive_request.main_load?) do
+          if progressive_request.main_load?
             progressive_renderer.render_partial placeholder
           elsif progressive_request.should_render_fragment?(fragment_name)
             yield
