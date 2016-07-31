@@ -6,8 +6,7 @@ module ProgressiveRender
       include Helpers
 
       def progressive_render(deprecated_fragment_name = nil,
-                             placeholder: 'progressive_render/placeholder',
-                             cache_keys: nil)
+                             placeholder: 'progressive_render/placeholder')
         fragment_name = fragment_name_iterator.next!
 
         if deprecated_fragment_name
