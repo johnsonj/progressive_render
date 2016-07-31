@@ -26,8 +26,9 @@ def load_test_endpoint(endpoint, name: "Testing #{endpoint}", sections: [], asse
         expect(replacement).to_not be nil
 
         # The placeholder is not in the partial request
-        expect(partial_request_doc.css(section_placeholder_selector)[0]['data-progressive-render-placeholder']).to eql('false')
-        expect(partial_request_doc.css(section_placeholder_selector)[0]['data-progressive-render-path']).to be_nil
+        placeholder_content = partial_request_doc.css(section_placeholder_selector)[0]
+        expect(placeholder_content['data-progressive-render-placeholder']).to eql('false')
+        expect(placeholder_content['data-progressive-render-path']).to be_nil
         # The preloaded content is not in the partial request
         expect(partial_request_doc.css(section_preloaded_selector)).to be_empty if section_preloaded_selector
       end
@@ -35,12 +36,13 @@ def load_test_endpoint(endpoint, name: "Testing #{endpoint}", sections: [], asse
   end
 end
 
+# rubocop:disable Metrics/LineLength
 RSpec.describe LoadTestController, type: :request do
   # Basic examples
-  load_test_endpoint '/load_test/block', name: 'With a single block', sections: [1], assert_loaded: ['#world']
-  load_test_endpoint '/load_test/multiple_blocks',    name: 'With multiple blocks',      sections: [1, 2, 3], assert_loaded: ['#first', '#second', '#third']
-  load_test_endpoint '/load_test/custom_placeholder', name: 'With a custom placeholder', sections: [1],     assert_preloaded: ['#custom_placeholder'], assert_loaded: ['#first']
-  load_test_endpoint '/load_test/render_params',      name: 'With custom render params', sections: [1],     assert_preloaded: ['#custom_layout'],      assert_loaded: ['#world']
+  load_test_endpoint '/load_test/block',              name: 'With a single block',       sections: [1],                                                   assert_loaded: ['#world']
+  load_test_endpoint '/load_test/multiple_blocks',    name: 'With multiple blocks',      sections: [1, 2, 3],                                             assert_loaded: ['#first', '#second', '#third']
+  load_test_endpoint '/load_test/custom_placeholder', name: 'With a custom placeholder', sections: [1],       assert_preloaded: ['#custom_placeholder'],  assert_loaded: ['#first']
+  load_test_endpoint '/load_test/render_params',      name: 'With custom render params', sections: [1],       assert_preloaded: ['#custom_layout'],       assert_loaded: ['#world']
 
   # Deprecated usage
   load_test_endpoint '/load_test/deprecated_explicit_call',               name: 'Deprecated: Explicit call in controller',                    sections: [1],     assert_loaded: ['#world']
@@ -49,3 +51,4 @@ RSpec.describe LoadTestController, type: :request do
   # Specific bugs
   load_test_endpoint '/load_test/atom_repro', name: 'With an atom format', sections: [1], assert_preloaded: ['#outside'], assert_loaded: ['#inside']
 end
+# rubocop:enable Metrics/LineLength
