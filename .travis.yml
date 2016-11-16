@@ -12,6 +12,9 @@ cache: bundler
 
 before_install: gem install bundler -v 1.10.3
 
+after_script:
+  - codeclimate-test-reporter < lcov.info
+
 gemfile:
   - gemfiles/rails_5_0_0_beta4.gemfile
   - gemfiles/rails_4_2.gemfile
