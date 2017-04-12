@@ -16,7 +16,8 @@ after_script:
   - codeclimate-test-reporter < lcov.info
 
 gemfile:
-  - gemfiles/rails_5_0_0_beta4.gemfile
+  - gemfiles/rails_5_0_2
+  - gemfiles/rails_5_0_1
   - gemfiles/rails_4_2.gemfile
   - gemfiles/rails_4_1.gemfile
 
@@ -26,4 +27,4 @@ matrix:
     - rvm: ruby-head
   exclude:
     - rvm: 2.1.10
-      gemfile: gemfiles/rails_5_0_0_beta4.gemfile
+      gemfile: gemfiles/rails_5_0_1.gemfile
