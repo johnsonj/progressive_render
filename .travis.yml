@@ -16,8 +16,8 @@ after_script:
   - codeclimate-test-reporter < lcov.info
 
 gemfile:
-  - gemfiles/rails_5_0_2
-  - gemfiles/rails_5_0_1
+  - gemfiles/rails_5_0_2.gemfile
+  - gemfiles/rails_5_0_1.gemfile
   - gemfiles/rails_4_2.gemfile
   - gemfiles/rails_4_1.gemfile
 
