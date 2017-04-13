@@ -1,4 +1,5 @@
 require 'uri'
+require 'rack/utils'
 
 module ProgressiveRender
   module Rack
@@ -30,7 +31,7 @@ module ProgressiveRender
         query = @request.GET.clone
         query[FRAGMENT_KEY] = fragment_name
 
-        URI::HTTP.build(path: @request.path, query: URI.encode_www_form(query)).request_uri
+        URI::HTTP.build(path: @request.path, query: ::Rack::Utils.build_nested_query(query)).request_uri
       end
     end
   end
