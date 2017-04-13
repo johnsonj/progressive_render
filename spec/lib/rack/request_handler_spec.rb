@@ -42,4 +42,14 @@ describe ProgressiveRender::Rack::RequestHandler do
     expect(get_request).to eq(get_request)
     expect(get_clone).to eq(get_request)
   end
+
+  it 'handles nested params' do
+    get_request = { foo: { bar: 'baz' } }
+    req = double
+    allow(req).to receive(:GET).and_return(get_request)
+    allow(req).to receive(:path).and_return('/endpoint')
+
+    rh = ProgressiveRender::Rack::RequestHandler.new(req)
+    expect(rh.load_path('bar')).to eq("/endpoint?foo[bar]=baz&#{FRAGMENT_KEY}=bar")
+  end
 end
