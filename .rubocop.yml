@@ -5,6 +5,7 @@ Metrics/LineLength:
 
 AllCops:
   Exclude:
+    - Appraisals
     - spec/dummy/bin/rake
     - spec/dummy/bin/rails
     - spec/dummy/bin/spring

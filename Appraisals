@@ -1,5 +1,10 @@
-appraise "rails-5-0-0-beta4" do
-  gem "rails", "5.0.0.beta4"
+appraise "rails-5-0-1" do
+  gem "rails", "5.0.1"
+  gem "nokogiri"
+end
+
+appraise "rails-5-0-2" do
+  gem "rails", "5.0.2"
   gem "nokogiri"
 end
 
