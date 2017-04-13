@@ -1,18 +1,13 @@
 class LoadTestController < ApplicationController
-  def example
-  end
+  def example; end
 
-  def index
-  end
+  def index; end
 
-  def block
-  end
+  def block; end
 
-  def multiple_blocks
-  end
+  def multiple_blocks; end
 
-  def custom_placeholder
-  end
+  def custom_placeholder; end
 
   def render_params
     render layout: 'custom_layout'

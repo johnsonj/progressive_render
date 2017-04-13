@@ -1,0 +1,11 @@
+inherit_from: '../.rubocop.yml'
+
+# RSpec tests can be very long, and that's ok
+Metrics/BlockLength:
+  Max: 10000
+
+# For methods that perform tests
+Metrics/MethodLength:
+  Max: 50
+Metrics/AbcSize:
+  Max: 50
