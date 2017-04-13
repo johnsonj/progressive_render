@@ -48,7 +48,7 @@ module ProgressiveRender
 
       def progressive_render_content(fragment_name, placeholder = true)
         data = { progressive_render_placeholder: placeholder,
-                 progressive_render_path: progressive_request.load_path(fragment_name) }.select { |_k, v| !v.nil? }
+                 progressive_render_path: progressive_request.load_path(fragment_name) }.reject { |_k, v| v.nil? }
 
         content_tag(:div, id: "#{fragment_name}_progressive_render",
                           data: data) do
